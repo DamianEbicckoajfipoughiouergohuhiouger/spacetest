@@ -6,6 +6,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     font-size: 16px;
+    overflow-x: hidden;
+
 }
 
 header {
@@ -169,35 +171,56 @@ section h2 {
     margin: 20px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+#join-us {
+  padding: 50px;
 }
 
-form label {
-    font-size: 20px;
-    margin-bottom: 10px;
+#join-us h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-form input, form textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    border: none;
+#join-us p {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-form button {
-    padding: 10px 20px;
-    background-color: #f3c623;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.google-form-container {
+  display: flex;
+  justify-content: center;
 }
 
-form button:hover {
-    background-color: #222;
-    color: #f3c623;
+.google-form-container iframe {
+  max-width: 100%;
 }
+
+#join-us {
+  background-color: #f0c982;
+}
+#container {
+    position: relative;
+    height: 100vh;
+  }
+  
+  #about-us {
+    height: 100%;
+  }
+  
+  #images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  #images {
+    margin-top: calc(25vh + 100px); /* adjust the value as needed */
+  }
+  #images {
+    background-color: #272727;
+  }
+
+  #images {
+    height: calc(75vh - 75px);
+  }
