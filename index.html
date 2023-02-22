@@ -3,10 +3,13 @@
 <head>
     <title>Amerikanska Gymnasiet Stockholm Space and Technology Club</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="spacelogo.png">
+
 </head>
 <body>
     <header>
         <div class="navbar">
+            <image src="spacelogo.png" height="5%" width="5%" id="logoimage" />
             <h1 class="logo">AGS Space and Technology Club</h1>
             <nav>
                 <ul class="navlinks">
@@ -22,6 +25,7 @@
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
+
         </div>
     </header>
 
@@ -30,17 +34,17 @@
         <h1>Welcome to the World of Technology and Space</h1>
         <button class="btn">Explore</button>
     </section>
-
+    <div id="container">
     <section id="about-us">
         <h2>About Us</h2>
         <div class="row">
             <div class="column">
                 <h3>Who we are?</h3>
-                <p>We are a passionate group of students who love technology and space. Our club is divided into two departments, Coding and Practical.</p>
+                <p>We are the Space And Technology Club from Amerikanska Gymnasiet Stockholm. We focus mostly on researching space and building different types of tech.</p>
             </div>
             <div class="column">
                 <h3>What we do?</h3>
-                <p>In the Practical department, we work on building robots and rockets for various purposes. In the Coding department, we work on various coding projects including websites and games.</p>
+                <p>Our club is divided into two departments; the Coding Department which handles the software and code side of things, programming for hardware or creating digital media. We also have the Practical department which handles all hands-on tasks such as building things and working on physical stuff.</p>
             </div>
             <div class="column">
                 <h3>Why join us?</h3>
@@ -49,28 +53,106 @@
         </div>
     </section>
 
+    <section id="images">
+        
+        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+            <img class="image" src="https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8amFwYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" draggable="false" />
+            <img class="image" src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8amFwYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" draggable="false" />
+            <img class="image" src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8amFwYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" draggable="false" />
+            <img class="image" src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8amFwYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" draggable="false" />
+            <img class="image" src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGphcGFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" draggable="false" />
+            <img class="image" src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGphcGFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" draggable="false" />
+            <img class="image" src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGphcGFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" draggable="false" />
+            <img class="image" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGphcGFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" draggable="false" />
+        </div>
+
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+
+            margin: 0rem;
+ 
+        }
+        #image-track > .image{
+            width: 40vmin;
+            height: 56vmin;
+            object-fit: cover;
+            object-position: 100% 50%;
+        }
+
+        #image-track {
+            display: flex;
+            gap: 4vmin;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+        }
+
+    </style>
+    <Script>
+        const track = document.getElementById("image-track");
+
+        window.onmousedown = e => {
+            track.dataset.mouseDownAt = e.clientX;
+        }
+
+        window.onmouseup = () => {
+            track.dataset.mouseDownAt = "0";
+            track.dataset.prevPercentage = track.dataset.percentage;
+        }
+
+        window.onmousemove = e => {
+            if(track.dataset.mouseDownAt === "0") return;
+
+            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+                  maxDelta = window.innerWidth / 2;
+
+            const percentage = (mouseDelta / maxDelta) *-100;
+            nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+            nextPercentage = Math.min(nextPercentage, 0);
+            nextPercentage = Math.max(nextPercentage, -100);
+
+
+            track.dataset.percentage= nextPercentage;
+
+            track.animate({
+                transform: `translate(${nextPercentage}%, -50%)`
+            }, { duration: 1200, fill: "forwards"});
+            for(const image of track.getElementsByClassName("image")){
+            image.animate({
+                objectPosition: `${100 + nextPercentage}% center`
+            }, {duration: 1200, fill: "forwards"});
+        }
+        }
+
+
+    </Script>
+    </section>
+</div>
     <section id="coding">
         <h2>Coding Department</h2>
         <div class="row">
             <div class="column">
                 <div class="card">
                     <img src="coding1.jpg">
-                    <h3>Coding Project 1</h3>
-                    <p>Description of Coding Project 1.</p>
+                    <h3>Website</h3>
+                    <p>We work with creating webpages including this one. We work with VSCode and Github Repositories.</p>
                 </div>
             </div>
             <div class="column">
                 <div class="card">
                     <img src="coding2.jpg">
-                    <h3>Coding Project 2</h3>
-                    <p>Description of Coding Project 2.</p>
+                    <h3>Games</h3>
+                    <p>We also plan on creating games, related to space or just for fun in general. Any game is possible.</p>
                 </div>
             </div>
             <div class="column">
                 <div class="card">
                     <img src="coding3.jpg">
-                    <h3>Coding Project 3</h3>
-                    <p>Description of Coding Project 3.</p>
+                    <h3>Hardware Coding</h3>
+                    <p>Once the Practical Department starts automating their rockets we're responsible for coding/programming the functions possibly with circuitboards.</p>
                 </div>
             </div>
         </div>
@@ -106,24 +188,19 @@
     <section id="join-us">
         <h2>Join Us</h2>
         <p>If you are interested in joining our club, please fill out the form below and we will get back to you.</p>
-<form action="joinus.php" method="POST">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
-  <label for="message">Message:</label>
-  <textarea id="message" name="message"></textarea>
-  <button type="submit" class="btn">Submit</button>
-</form>
-    </section>
+        <div class="google-form-container">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdjRO8OrOZIpbmLzcRZHFJLhDVJ-2SUxwHkXI5_qZnfMMimXA/viewform?embedded=true" width="800" height="927" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </section>
+      
 
     <section id="contact-us">
         <h2>Contact Us</h2>
         <p>For any inquiries or questions, please contact us at:</p>
         <ul>
-            <li>Email: spaceandtech@ags.edu.se</li>
-            <li>Phone: +46 8 123 4567</li>
-            <li>Address: Amerikanska Gymnasiet Stockholm, Södermalmstorg 4, 116 45 Stockholm, Sweden</li>
+            <li>Email: TBD</li>
+            <li>Phone: TBD</li>
+            <li>Address: Amerikanska Gymnasiet Stockholm, , Sweden</li>
         </ul>
     </section>
 
