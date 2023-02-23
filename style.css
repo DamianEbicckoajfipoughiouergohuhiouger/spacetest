@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    /*Sets the box-sizing property of all elements on the page to border-box, which includes padding and border in the element's total width and height.*/
 }
 
 body {
@@ -7,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     overflow-x: hidden;
-
+    /*Sets the margin of the body element to 0, and sets the font family and font size to Arial and 16px respectively. Also, sets the overflow-x property to hidden, which hides horizontal scrollbars.*/
 }
 
 header {
@@ -17,16 +18,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*Styles the header element with a background color of #222 and text color of #fff. Adds a padding of 20px and sets the display to flex with space-between and center alignment.*/
 }
 
 .logo {
     margin: 0;
+    /*Sets the margin of the logo element to 0.*/
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*Styles the navbar element with display: flex, space-between and center alignment.*/
 }
 
 .navlinks {
@@ -34,22 +38,25 @@ header {
     margin: 0;
     padding: 0;
     display: flex;
+    /*Styles the navlinks element as a flex container with no bullets and zero margin and padding.*/
 }
 
 .navlinks li {
     margin-right: 20px;
+    /*Sets the right margin of each list item in navlinks to 20px.*/
 }
 
 .navlinks li a {
     color: #fff;
     text-decoration: none;
     transition: all 0.3s ease;
+    /*Styles the link in each list item to have a white color, no underline, and adds a transition effect.*/
 }
 
 .navlinks li a:hover {
     color: #f3c623;
+    /*Styles the link in each list item to have a color of #f3c623 when it is being hovered over.*/
 }
-
 
     .burger div {
     width: 25px;
@@ -57,9 +64,11 @@ header {
     background-color: #fff;
     margin: 5px;
     transition: all 0.3s ease;
+    /*Styles each div element within the burger element, which represents the hamburger menu icon, to have a width of 25px, height of 3px, white background color, 5px margin, and a transition effect.*/
 }
 
 @media screen and (max-width: 768px) {
+    /* Media query for screens with a maximum width of 768px */
     .navbar {
         display: block;
         position: absolute;
@@ -71,15 +80,19 @@ header {
         text-align: center;
         transform: translateX(100%);
         transition: transform 0.5s ease-in-out;
+        /*Is responsible for the whole section in which the paralax images are*/
     }
     .navbar.active {
         transform: translateX(0);
+        /* Move the navbar onto the screen from the right */
     }
     .navlinks {
         display: block;
+        /* Display the links as block elements */
     }
     .navlinks li {
         margin-top: 10px;
+         /* Add margin to the top of each link item */
     }
     .burger {
         position: absolute;
@@ -87,6 +100,7 @@ header {
         right: 20px;
         cursor: pointer;
         z-index: 2;
+        /* Styling for the burger menu button */
     }
 }
  
@@ -96,17 +110,20 @@ main {
     justify-content: center;
     align-items: center;
     padding: 50px;
+    /* Styles for the main content area */
 }
 
 h1 {
     font-size: 48px;
     margin-bottom: 20px;
+    /* Styles for the main heading */
 }
 
 p {
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 30px;
+    /* Styles for the main paragraph text */
 }
 
 .btn {
@@ -117,20 +134,24 @@ p {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    /* Styles for the main button */
 }
 
 .btn:hover {
     background-color: #222;
     color: #f3c623;
+    /* Styles for the main button when hovered */
 }
 
 section {
     padding: 50px;
+    /* Styles for generic sections */
 }
 
 section h2 {
     font-size: 36px;
     margin-bottom: 30px;
+    /* Styles for section headings */
 }
 
 .row {
@@ -138,73 +159,88 @@ section h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    /* Styles for a row of elements */
 }
 
 .column {
     flex-basis: calc(33.33% - 20px);
     margin-bottom: 20px;
+    /* Styles for a column of elements */
 }
 
 .card {
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: all 0.3s ease;
+    /* Styles for a card element */
 }
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    /* Styles for a card element when hovered */
 }
 
 .card img {
     width: 100%;
     border-radius: 4px 4px 0 0;
+    /* Styles for an image inside a card element */
 }
 
 .card h3 {
     font-size: 24px;
     margin: 20px;
+    /* Styles for a heading inside a card element */
 }
 
 .card p {
     font-size: 16px;
     line-height: 1.5;
     margin: 20px;
+    /* Styles for text inside a card element */
 }
 
 #join-us {
   padding: 50px;
+  /* Styles for the "join us" section */
 }
 
 #join-us h2 {
   text-align: center;
   font-size: 36px;
   margin-bottom: 20px;
+  /* Styles for the heading in the "join us" section */
 }
 
 #join-us p {
   text-align: center;
   margin-bottom: 50px;
+  /* Styles for the paragraph text in the "join us" section */
 }
 
 .google-form-container {
   display: flex;
   justify-content: center;
+  /* Styles for the container of a Google form */
 }
 
 .google-form-container iframe {
   max-width: 100%;
+  /* Styles for the iframe of a Google form */
 }
 
 #join-us {
   background-color: #f0c982;
+  /* Styles for the "join us" section container */
 }
 #container {
     position: relative;
     height: 100vh;
+    /* Styles for the container of the whole page */
   }
   
   #about-us {
     height: 100%;
+    /* Styles for the "about us" section */
   }
   
   #images {
@@ -213,14 +249,8 @@ section h2 {
     left: 0;
     height: 100%;
     width: 100%;
-  }
-  #images {
     margin-top: calc(25vh + 100px); /* adjust the value as needed */
-  }
-  #images {
     background-color: #272727;
-  }
-
-  #images {
     height: calc(75vh - 75px);
+    /* Styles for an image element */
   }
