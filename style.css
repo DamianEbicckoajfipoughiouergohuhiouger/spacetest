@@ -255,3 +255,13 @@ section h2 {
     height: calc(75vh - 75px);
     /* Styles for an image element */
   }
+
+footer{
+    background-color: #272727;
+    /*footer background color*/
+}
+
+#footer_text{
+    color:aliceblue;
+    /*footer text color*/
+}
